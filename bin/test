@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if [ -f pyproject.toml ]; then
+    pip install poetry && poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
+fi
+
+pytest
