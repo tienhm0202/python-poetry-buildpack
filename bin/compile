@@ -24,7 +24,7 @@ function indent() {
 
 echo "-----> Install python:${PYTHON_VERSION}"
 
-source ./get_python
+source /tmp/buildpacks/custom/bin/get_python
 
 echo "-----> Generate requirements.txt with Poetry"
 
