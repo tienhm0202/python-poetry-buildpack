@@ -22,14 +22,6 @@ function indent() {
         esac
 }
 
-if [[ $BUILD_DIR != '/app' ]]; then
-    # python expects to reside in /app, so set up symlinks
-    # we will not remove these later so subsequent buildpacks can still invoke it
-    ln -nsf "$BUILD_DIR/.heroku/python" /app/.heroku/python
-    ln -nsf "$BUILD_DIR/.heroku/vendor" /app/.heroku/vendor
-    # Note: .heroku/src is copied in later.
-fi
-
 echo "-----> Generate requirements.txt with Poetry"
 
 echo "-----> Install Poetry"
