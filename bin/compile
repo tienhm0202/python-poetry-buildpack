@@ -22,10 +22,6 @@ function indent() {
         esac
 }
 
-echo "-----> Install python:${PYTHON_VERSION}"
-
-source /tmp/buildpacks/custom/bin/get_python
-
 echo "-----> Generate requirements.txt with Poetry"
 
 echo "-----> Install Poetry"
@@ -36,6 +32,10 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
   | indent
 
 source $HOME/.poetry/env
+
+echo "-----> Set up Python version for Poetry"
+
+poetry env use /tmp/buildpacks/custom/builds/python${PYTHON_VERSION}
 
 echo "-----> Export requirements.txt from Poetry"
 
@@ -58,8 +58,8 @@ if [ -f "$RUNTIME_FILE" ]; then
   exit 1
 fi
 
-# Get Python version from poetry.lock file metadata section
-VERSION=$(sed -n '/^\[metadata\]/,/^\[/p' poetry.lock | sed -n -e 's/^python-versions\s*=\s*//p' | tr -d '\"')
+# Get Python version from env
+VERSION=${PYTHON_VERSION}
 
 # Version is only valid if exact interpreter version is specified
 #

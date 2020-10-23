@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-if [[ -z "${PYTHON_VERSION}" ]]; then
-  PYTHON_VERSION="3.7.7"
-fi
-
-apt update
-apt install python${PYTHON_VERSION}
