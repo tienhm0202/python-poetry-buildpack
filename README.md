@@ -1,6 +1,9 @@
 # Python Poetry Buildpack
 
-A [Heroku](https://devcenter.heroku.com/) Buildpack for [Poetry](https://github.com/python-poetry/poetry) users.
+A [Heroku](https://devcenter.heroku.com/) Buildpack for [Poetry](https://github.com/python-poetry/poetry) users. 
+
+**With pytest integrated**
+
 
 ## How to use
 
@@ -10,7 +13,7 @@ To set up the use of several buildpacks from the Heroku CLI use `buildpacks:add`
 
 ```
 heroku buildpacks:clear
-heroku buildpacks:add https://github.com/moneymeets/python-poetry-buildpack.git
+heroku buildpacks:add https://github.com/tienhm0202/python-poetry-buildpack.git
 heroku buildpacks:add heroku/python
 ```
 
