@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ -z "${PYTHON_VERSION}" ]]; then
+  PYTHON_VERSION="3.7.7"
+fi
+
+add-apt-repository ppa:deadsnakes/ppa
+apt update
+apt install python${PYTHON_VERSION}

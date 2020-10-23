@@ -22,6 +22,10 @@ function indent() {
         esac
 }
 
+echo "-----> Install python:${PYTHON_VERSION}"
+
+source ./get_python
+
 echo "-----> Generate requirements.txt with Poetry"
 
 echo "-----> Install Poetry"
