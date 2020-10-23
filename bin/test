@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 BUILD_DIR=$1
+
+source $HOME/.poetry/env
+
 if [ -f "$BUILD_DIR/pyproject.toml" ]; then
     poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
 fi
