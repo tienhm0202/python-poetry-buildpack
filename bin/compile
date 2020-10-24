@@ -35,6 +35,7 @@ source $HOME/.poetry/env
 
 echo "-----> Set up Python version for Poetry"
 
+/tmp/buildpacks/custom/builds/runtimes/python${PYTHON_VERSION} -V
 poetry env use /tmp/buildpacks/custom/builds/runtimes/python${PYTHON_VERSION}
 
 echo "-----> Export requirements.txt from Poetry"
